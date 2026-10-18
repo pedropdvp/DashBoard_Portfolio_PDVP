@@ -8,7 +8,7 @@ window.PF_DATA = {
     cover: 'assets/cover-ai-agent.jpg',
     notion: 'https://military-couch-982.notion.site/Portfolio-Pedro-Varela-Pinto-3fced16b5f5b8054aa73d28eb664658b',
     cv: 'https://pedropdvp.github.io/Dashboard_Curriculum_pdvp/',
-    pillars: ['AI', 'Full-Stack Programming', 'SEO', 'Social Media'],
+    pillars: ['AI', 'Brand Identity', 'DashBoards', 'Full-Stack Programming', 'Websites'],
     contacts: {
       mobile: '+351 912 48 41 43',
       email: 'pedropdvp@gmail.com',
@@ -20,30 +20,6 @@ window.PF_DATA = {
     },
   },
   sections: [
-    {
-      id: 'platforms', title: 'Platforms for various business sectors', short: 'Business Platforms', icon: 'layers',
-      lede: 'Full-stack web platforms built for specific industries.',
-      items: [
-        { title: 'Lawyers Office Management - LawFlow', img: 'assets/projects/platform-lawflow.png' },
-        { title: 'Online training, content management and employability - MOZAI - AI Education Platform', img: 'assets/projects/platform-mozai.png',
-          links: [{ url: 'https://plataforma-formacao-mozai.vercel.app/dashboard', label: 'Open platform' }] },
-        { title: 'Agricultural and Wine Farms Management', img: 'assets/projects/platform-wine-farms.png',
-          links: [{ url: 'https://winemetricsfullstack-bom.onrender.com/', label: 'Open platform' }] },
-        { title: 'Condominium Management - CondoManager', img: 'assets/projects/platform-condomanager.png',
-          links: [{ url: 'https://condomanager.onrender.com/', label: 'Open platform' }] },
-      ],
-    },
-    {
-      id: 'websites', title: 'Websites', icon: 'globe',
-      lede: 'Responsive, SEO-ready websites for companies and professionals.',
-      items: [
-        { title: 'WhyRen - Renewals with Soul', img: 'assets/projects/website-whyren.png' },
-        { title: 'Pharus AI Agency - Lisboa, Portugal', img: 'assets/projects/website-pharus-ai.png',
-          links: [{ url: 'https://pharus-ai-website.vercel.app/index.html', label: 'Visit website' }] },
-        { title: 'Paula Martins Advogados - Tavira, Portugal', img: 'assets/projects/website-paula-martins.png',
-          links: [{ url: 'https://paulamartinsadvogados.com/', label: 'Visit website' }] },
-      ],
-    },
     {
       id: 'ai-assistants', title: 'AI Assistants', icon: 'bot',
       lede: 'Conversational AI assistants that answer customers 24/7 on behalf of a brand.',
@@ -60,35 +36,12 @@ window.PF_DATA = {
       ],
     },
     {
-      id: 'powerbi', title: 'Dashboards - With PowerBI having data transformation with PowerQuery', short: 'Power BI Dashboards', icon: 'bars',
-      lede: 'Power BI reports with data transformation in Power Query.',
-      items: [
-        { title: 'Power BI report — view 1', img: 'assets/projects/powerbi-1.png' },
-        { title: 'Power BI report — view 2', img: 'assets/projects/powerbi-2.png' },
-        { title: 'Power BI report — view 3', img: 'assets/projects/powerbi-3.png' },
-      ],
-    },
-    {
-      id: 'dashboards', title: 'Dashboards', icon: 'grid',
-      lede: 'Interactive web dashboards that turn business data into clear decisions.',
-      items: [
-        { title: 'DashBoard for quotes - Building works', img: 'assets/projects/dashboard-quotes-building-works.png',
-          links: [{ url: 'https://claude.ai/artifact/2v1tYWTMR5MS9pQTjNyZHD', label: 'Open dashboard' }] },
-        { title: 'DashBoard for presenting a Construction Company', img: 'assets/projects/dashboard-construction-company.png',
-          links: [{ url: 'https://imperious-painel.pdvp.chatgpt.site/#visao', label: 'Open dashboard' }] },
-        { title: 'Dashboard for Property Investment Projects Analysis (Excel)', img: 'assets/projects/dashboard-property-investment-excel.png' },
-        { title: 'DashBoard for presenting a Database for a Travel Agency', img: 'assets/projects/dashboard-travel-agency.png',
-          links: [{ url: 'https://atlas-viagens.pdvp.chatgpt.site/', label: 'Open dashboard' }] },
-        { title: 'Dashboard for an Online Store', img: 'assets/projects/dashboard-online-store.png' },
-        { title: 'Dashboard for the Condominium Market Analysis', img: 'assets/projects/dashboard-condominium-market.png',
-          links: [{ url: 'https://pedropdvp.github.io/Gest_Condominios/', label: 'Open dashboard' }] },
-      ],
-    },
-    {
       id: 'annual-report', title: 'Annual Report and Account', icon: 'book',
-      lede: 'EDP 2003 Annual Report and Accounts.',
+      lede: 'EDP 2003 Annual Report and Accounts — Institutional, Financial and Sustainability reports.',
       items: [
-        { title: 'EDP 2003 Annual Report and Accounts' },
+        { title: 'EDP 2003 Annual Report and Accounts', img: 'assets/projects/edp-2003-cover.jpg', portrait: true,
+          desc: 'Institutional Report cover, the message to shareholders and the overview of the three reports.',
+          gallery: ['assets/projects/edp-2003-page-1.jpg', 'assets/projects/edp-2003-page-2.jpg'] },
       ],
     },
     {
@@ -118,9 +71,58 @@ window.PF_DATA = {
       ],
     },
     {
+      id: 'dashboards', title: 'Dashboards', icon: 'grid',
+      lede: 'Interactive web dashboards that turn business data into clear decisions.',
+      items: [
+        { title: 'DashBoard for quotes - Building works', img: 'assets/projects/dashboard-quotes-building-works.png',
+          links: [{ url: 'https://claude.ai/artifact/2v1tYWTMR5MS9pQTjNyZHD', label: 'Open dashboard' }] },
+        { title: 'DashBoard for presenting a Construction Company', img: 'assets/projects/dashboard-construction-company.png',
+          links: [{ url: 'https://imperious-painel.pdvp.chatgpt.site/#visao', label: 'Open dashboard' }] },
+        { title: 'Dashboard for Property Investment Projects Analysis (Excel)', img: 'assets/projects/dashboard-property-investment-excel.png' },
+        { title: 'DashBoard for presenting a Database for a Travel Agency', img: 'assets/projects/dashboard-travel-agency.png',
+          links: [{ url: 'https://atlas-viagens.pdvp.chatgpt.site/', label: 'Open dashboard' }] },
+        { title: 'Dashboard for an Online Store', img: 'assets/projects/dashboard-online-store.png' },
+        { title: 'Dashboard for the Condominium Market Analysis', img: 'assets/projects/dashboard-condominium-market.png',
+          links: [{ url: 'https://pedropdvp.github.io/Gest_Condominios/', label: 'Open dashboard' }] },
+      ],
+    },
+    {
+      id: 'powerbi', title: 'Dashboards - With PowerBI having data transformation with PowerQuery', short: 'Power BI Dashboards', icon: 'bars',
+      lede: 'Power BI reports with data transformation in Power Query.',
+      items: [
+        { title: 'Power BI report — view 1', img: 'assets/projects/powerbi-1.png' },
+        { title: 'Power BI report — view 2', img: 'assets/projects/powerbi-2.png' },
+        { title: 'Power BI report — view 3', img: 'assets/projects/powerbi-3.png' },
+      ],
+    },
+    {
+      id: 'platforms', title: 'Platforms', short: 'Platforms', icon: 'layers',
+      lede: 'Full-stack web platforms built for specific industries.',
+      items: [
+        { title: 'Lawyers Office Management - LawFlow', img: 'assets/projects/platform-lawflow.png' },
+        { title: 'Online training, content management and employability - MOZAI - AI Education Platform', img: 'assets/projects/platform-mozai.png',
+          links: [{ url: 'https://plataforma-formacao-mozai.vercel.app/dashboard', label: 'Open platform' }] },
+        { title: 'Agricultural and Wine Farms Management', img: 'assets/projects/platform-wine-farms.png',
+          links: [{ url: 'https://winemetricsfullstack-bom.onrender.com/', label: 'Open platform' }] },
+        { title: 'Condominium Management - CondoManager', img: 'assets/projects/platform-condomanager.png',
+          links: [{ url: 'https://condomanager.onrender.com/', label: 'Open platform' }] },
+      ],
+    },
+    {
       id: 'video', title: 'Video Production and Editing', short: 'Video Production', icon: 'film',
       lede: 'Video production and editing.',
       items: [],
+    },
+    {
+      id: 'websites', title: 'Websites', icon: 'globe',
+      lede: 'Responsive, SEO-ready websites for companies and professionals.',
+      items: [
+        { title: 'WhyRen - Renewals with Soul', img: 'assets/projects/website-whyren.png' },
+        { title: 'Pharus AI Agency - Lisboa, Portugal', img: 'assets/projects/website-pharus-ai.png',
+          links: [{ url: 'https://pharus-ai-website.vercel.app/index.html', label: 'Visit website' }] },
+        { title: 'Paula Martins Advogados - Tavira, Portugal', img: 'assets/projects/website-paula-martins.png',
+          links: [{ url: 'https://paulamartinsadvogados.com/', label: 'Visit website' }] },
+      ],
     },
   ],
 };
