@@ -49,7 +49,7 @@
   /* ---------- section registry ---------- */
   const HUES = ['#36e2c4', '#6f7dff', '#ff7ab6', '#ffc65c', '#4fc3ff', '#b78cff', '#7ee07a', '#ff8f6b'];
   const SECS = [
-    { id: 'overview', title: 'Portfolio Overview', icon: 'star', lede: 'AI, full-stack programming, SEO and social media — platforms, websites, assistants, avatars, dashboards, business plans and brand work in one place.', special: true },
+    { id: 'overview', title: 'Portfolio Overview', icon: 'star', lede: 'AI, brand identity, dashboards, full-stack programming and websites — assistants, avatars, reports, business plans, platforms and sites in one place.', special: true },
     ...D.sections,
     { id: 'contacts', title: 'Contacts', icon: 'mail', lede: 'Get in touch — phone, e-mail, LinkedIn and address.', special: true },
   ];
@@ -58,9 +58,10 @@
   // Which portfolio areas illustrate each of the seven headline pillars.
   const PILLARS = {
     'AI': ['ai-assistants', 'avatars'],
-    'Full-Stack Programming': ['platforms', 'dashboards', 'powerbi'],
-    'SEO': ['websites'],
-    'Social Media': ['brand-identity', 'brand-book', 'video'],
+    'Brand Identity': ['brand-identity', 'brand-book', 'annual-report'],
+    'DashBoards': ['dashboards', 'powerbi'],
+    'Full-Stack Programming': ['platforms', 'business-plans'],
+    'Websites': ['websites'],
   };
 
   const statsOf = (s) => {
@@ -112,7 +113,7 @@
     let shot;
     if (it.img) {
       const gi = gallery.push({ src: it.img, label: it.title, t: 'img' }) - 1;
-      shot = `<button class="shot" data-media="${gi}" aria-label="Open screenshot of ${esc(it.title)}"><img loading="lazy" src="${esc(it.img)}" alt="Screenshot: ${esc(it.title)}"></button>`;
+      shot = `<button class="shot${it.portrait ? ' portrait' : ''}" data-media="${gi}" aria-label="Open screenshot of ${esc(it.title)}"><img loading="lazy" src="${esc(it.img)}" alt="Screenshot: ${esc(it.title)}"></button>`;
     } else if (it.video) {
       shot = `<div class="shot" style="cursor:auto"><video controls preload="metadata" playsinline poster="${esc(it.poster || '')}" src="${esc(it.video)}" style="height:100%;border-radius:0;object-fit:cover"></video></div>`;
     } else if (it.yt) {
@@ -157,7 +158,7 @@
     const max = Math.max(...counts.map((c) => c.n));
     const bars = counts.slice().sort((a, b) => b.n - a.n).map((c) => `<button class="bar" data-go="${c.id}"><span class="lbl"><span>${esc(byId[c.id].short)}</span><b>${c.n}</b></span><span class="track"><span class="fill" data-w="${(c.n / max) * 100}%"></span></span></button>`).join('');
     const pillars = P.pillars.map((p, i) => `<div class="card pill-card reveal" style="--hue:${HUES[i % HUES.length]}">
-      <div class="pillar" style="border:0;padding:0;background:none"><span class="ico">${icon(['bot', 'layers', 'globe', 'share'][i])}</span><div><h3 style="margin:0 0 6px">${esc(p)}</h3>
+      <div class="pillar" style="border:0;padding:0;background:none"><span class="ico">${icon(['bot', 'palette', 'grid', 'layers', 'globe'][i])}</span><div><h3 style="margin:0 0 6px">${esc(p)}</h3>
       <div class="links">${PILLARS[p].map((id) => `<button data-go="${id}">${esc(byId[id].short)}</button>`).join('')}</div></div></div></div>`).join('');
     const shots = D.sections.flatMap((x) => x.items.filter((it) => it.img).map((it) => ({ it, x })));
     const showcase = shots.map(({ it, x }) => { const gi = gallery.push({ src: it.img, label: it.title, t: 'img' }) - 1; return `<button class="thumb reveal" data-media="${gi}" title="${esc(it.title)} — ${esc(x.short)}"><img loading="lazy" src="${esc(it.img)}" alt="${esc(it.title)}"></button>`; }).join('');
@@ -224,9 +225,9 @@
     $('#marquee').innerHTML = pills + pills.replace(/<button /g, '<button tabindex="-1" aria-hidden="true" ');
     $('#tiles').innerHTML = SECS.map((s) => {
       const meta = s.stats ? statChips({ projects: s.stats.projects, images: s.stats.images, videos: s.stats.videos, links: s.stats.links }) :
-        s.id === 'overview' ? '<span class="chip">4 disciplines</span><span class="chip">screenshot wall</span><span class="chip">video</span>' : '<span class="chip">phone · e-mail · LinkedIn</span>';
+        s.id === 'overview' ? '<span class="chip">5 disciplines</span><span class="chip">screenshot wall</span><span class="chip">video</span>' : '<span class="chip">phone · e-mail · LinkedIn</span>';
       const thumb = s.items && s.items.find((it) => it.img);
-      const feature = s.id === 'overview' || s.id === 'platforms' || s.id === 'dashboards';
+      const feature = s.id === 'overview' || s.id === 'dashboards' || s.id === 'platforms';
       return `<button class="tile${feature ? ' feature' : ''}" style="--hue:${s.hue}" data-go="${s.id}">
         <span class="num">${String(s.idx + 1).padStart(2, '0')}</span>
         <span class="ico">${icon(s.icon)}</span><h3>${esc(s.title)}</h3>
@@ -239,8 +240,8 @@
 
     const nameEl = $('.split');
     if (!reduced) nameEl.innerHTML = [...nameEl.textContent].map((ch, i) => `<span class="ch" style="animation-delay:${200 + i * 45}ms;background-position:${i * 6}% 0">${ch === ' ' ? '&nbsp;' : esc(ch)}</span>`).join('');
-    const phrases = ['Full-stack platforms for real businesses', 'Websites built for search & conversion', 'AI assistants & avatars',
-      'Interactive dashboards & Power BI reports', 'Business plans & brand identity', 'SEO & social media'];
+    const phrases = ['AI assistants & avatars', 'Brand identity & national media campaigns', 'Interactive dashboards & Power BI reports',
+      'Full-stack platforms for real businesses', 'Responsive websites that convert', 'Business plans & annual reports'];
     const el = $('#typed');
     if (reduced) { el.textContent = phrases[0]; return; }
     let pi = 0, ci = 0, del = false;

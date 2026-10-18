@@ -410,3 +410,8 @@ mark { background: color-mix(in srgb, var(--warn) 45%, transparent); color: inhe
 .contact-list { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
 .empty-state > svg { width: 40px; height: 40px; color: var(--hue, var(--accent)); margin: 0 auto 10px; display: block; opacity: .8; }
 .empty-state p { margin: 0 0 14px; }
+.pcard .shot.portrait { aspect-ratio: auto; max-height: 520px; background: #111; }
+.pcard .shot.portrait img { object-fit: contain; height: 520px; }
+.port-grid.solo .showcase { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.port-grid.solo .showcase .thumb { aspect-ratio: 3/4; }
+.port-grid.solo .showcase .thumb img { object-fit: contain; background: #111; }
