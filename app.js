@@ -222,7 +222,9 @@
     ];
     $('#kpis').innerHTML = kpis.map(([v, suf, l]) => `<div class="kpi"><b data-count="${v}" data-suf="${suf}">0</b><span>${l}</span></div>`).join('');
     const pills = P.pillars.map((p) => `<button data-go="${PILLARS[p][0]}"><i></i>${esc(p)}</button>`).join('');
-    $('#marquee').innerHTML = pills + pills.replace(/<button /g, '<button tabindex="-1" aria-hidden="true" ');
+    // The marquee repeats the pills so it can loop; the repeated Full-Stack pill opens DashBoards.
+    const loop = P.pillars.map((p) => `<button tabindex="-1" aria-hidden="true" data-go="${p === 'Full-Stack Programming' ? 'dashboards' : PILLARS[p][0]}"><i></i>${esc(p)}</button>`).join('');
+    $('#marquee').innerHTML = pills + loop;
     $('#tiles').innerHTML = SECS.map((s) => {
       const meta = s.stats ? statChips({ projects: s.stats.projects, images: s.stats.images, videos: s.stats.videos, links: s.stats.links }) :
         s.id === 'overview' ? '<span class="chip">5 disciplines</span><span class="chip">screenshot wall</span><span class="chip">video</span>' : '<span class="chip">phone · e-mail · LinkedIn</span>';
